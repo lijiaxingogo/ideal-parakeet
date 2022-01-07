@@ -2,12 +2,13 @@ const express = require('express');
 const morgan = require('morgan');
 require('dotenv').config();
 const app = express();
-
+const pokemonRoute = require('./routes/pokemonRoute');
 // request logger middleware
 app.use(morgan('tiny'));
 // body parser middleware
 app.use(express.json());
-
+// router for Pokemon
+app.use('/pokemon', pokemonRoute);
 // start server
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
