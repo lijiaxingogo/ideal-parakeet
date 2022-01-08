@@ -3,12 +3,23 @@ const morgan = require('morgan');
 require('dotenv').config();
 const app = express();
 const pokemonRoute = require('./routes/pokemonRoute');
+const cors = require('cors');
+// cors
+app.use(
+    cors({
+        // Sets Access-Control-Allow-Origin to the UI URI
+        origin: 'http://localhost:3000',
+        // Sets Access-Control-Allow-Credentials to true
+        credentials: true,
+    })
+);
 // request logger middleware
 app.use(morgan('tiny'));
 // body parser middleware
 app.use(express.json());
 // router for Pokemon
 app.use('/pokemon', pokemonRoute);
+
 // default error handler
 app.use((err, req, res, next) => {
     const defaultErr = {
