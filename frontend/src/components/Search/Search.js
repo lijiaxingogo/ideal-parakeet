@@ -8,8 +8,8 @@ import { PokemonContext } from '../../context/pokemonContext';
 const Search = () => {
     const classes = useStyle();
     const [searchValue, setSearchValue] = useState('');
-    const { addPokemonToList } = useContext(PokemonContext);
-
+    const { addPokemonToList, pokemonList } = useContext(PokemonContext);
+    console.log('what is pokemonList', pokemonList);
     const onChange = (event) => {
         setSearchValue(event.target.value);
     };
@@ -21,6 +21,7 @@ const Search = () => {
             }
         );
         // grab the data from backend API and push it to global pokemon context
+        data.data.id = pokemonList.length + 1;
         addPokemonToList(data.data);
     };
     return (
