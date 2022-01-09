@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: 200,
+        minHeight: 190,
         maxWidth: '100%',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

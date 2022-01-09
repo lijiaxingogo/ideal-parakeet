@@ -9,5 +9,6 @@ export default makeStyles((theme) => ({
     displayBoard: {
         height: 440,
         width: '85%',
+        paddingTop: 10,
     },
 }));
