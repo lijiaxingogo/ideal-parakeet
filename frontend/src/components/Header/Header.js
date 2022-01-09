@@ -1,11 +1,4 @@
-import {
-    AppBar,
-    Toolbar,
-    Typography,
-    Button,
-    Box,
-    Modal,
-} from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import useStyle from './style';
 const Header = () => {
     const classes = useStyle();
