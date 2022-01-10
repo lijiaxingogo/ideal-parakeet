@@ -14,6 +14,7 @@ const Search = () => {
     console.log('what is pokemonList', pokemonList);
     const onChange = (event) => {
         setSearchValue(event.target.value);
+        setError(false);
     };
     const onSubmit = async (pokemon = searchValue) => {
         try {
