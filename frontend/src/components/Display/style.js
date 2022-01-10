@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
         flexDirection: 'column',
     },
     displayBoard: {
-        height: 440,
+        height: 480,
         width: '85%',
         paddingTop: 10,
     },

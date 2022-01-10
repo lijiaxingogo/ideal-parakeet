@@ -5,24 +5,32 @@ import SearchIcon from '@mui/icons-material/Search';
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import axios from 'axios';
 import { PokemonContext } from '../../context/pokemonContext';
+import { Alert, AlertTitle } from '@material-ui/lab';
 const Search = () => {
     const classes = useStyle();
     const [searchValue, setSearchValue] = useState('');
     const { addPokemonToList, pokemonList } = useContext(PokemonContext);
+    const [error, setError] = useState(false);
     console.log('what is pokemonList', pokemonList);
     const onChange = (event) => {
         setSearchValue(event.target.value);
     };
     const onSubmit = async (pokemon = searchValue) => {
-        const data = await axios.get(
-            `http://localhost:4000/pokemon/${pokemon}`,
-            {
-                headers: { 'Access-Control-Allow-Origin': '*' },
-            }
-        );
+        try {
+            const data = await axios.get(
+                `http://localhost:4000/pokemon/${pokemon}`,
+                {
+                    headers: { 'Access-Control-Allow-Origin': '*' },
+                }
+            );
+
+            data.data.id = pokemonList.length + 1;
+            addPokemonToList(data.data);
+        } catch (err) {
+            setError(true);
+        }
+
         // grab the data from backend API and push it to global pokemon context
-        data.data.id = pokemonList.length + 1;
-        addPokemonToList(data.data);
     };
     return (
         <div className={classes.Container}>
@@ -59,6 +67,19 @@ const Search = () => {
                     <SearchIcon />
                 </IconButton>
             </Paper>
+            {error && (
+                <div className={classes.ErrorMsg}>
+                    <Alert
+                        severity="error"
+                        onClose={() => {
+                            setError(false);
+                        }}
+                    >
+                        Couldn't find the pokemon —{' '}
+                        <strong>Try it again!</strong>
+                    </Alert>
+                </div>
+            )}
         </div>
     );
 };

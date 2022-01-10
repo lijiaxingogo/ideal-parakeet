@@ -12,25 +12,25 @@ const columns = [
         width: 170,
         renderCell: (params) => <img src={params.value} />,
     },
-    { field: 'type', headerName: 'Type', width: 130 },
+    { field: 'type', headerName: 'Type', width: 150 },
     { field: 'index', headerName: 'Pokedex', width: 110 },
     {
         field: 'hp',
         headerName: 'HP',
         type: 'number',
-        width: 110,
+        width: 115,
     },
     {
         field: 'attack',
         headerName: 'Attack',
         type: 'number',
-        width: 110,
+        width: 115,
     },
     {
         field: 'defense',
         headerName: 'Defense',
         type: 'number',
-        width: 110,
+        width: 115,
     },
 ];
 const Display = () => {

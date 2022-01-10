@@ -5,9 +5,13 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: 190,
+        minHeight: 180,
         maxWidth: '100%',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        flexDirection: 'column',
+    },
+    ErrorMsg: {
+        marginTop: 10,
     },
 }));
