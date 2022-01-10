@@ -37,4 +37,4 @@ cd backend
 npm run test
 ```
 
-Free feel to contact me through jiaxin.li.gogo@gmail.com for any issues.
+Free feel to contact me at jiaxin.li.gogo@gmail.com for any issues. Thank you!
