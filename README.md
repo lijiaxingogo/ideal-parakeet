@@ -37,4 +37,8 @@ cd backend
 npm run test
 ```
 
+## Data Source
+
+https://pokeapi.co/
+
 Free feel to contact me at jiaxin.li.gogo@gmail.com for any issues. Thank you!

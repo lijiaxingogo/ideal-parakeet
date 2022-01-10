@@ -11,7 +11,6 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState('');
     const { addPokemonToList, pokemonList } = useContext(PokemonContext);
     const [error, setError] = useState(false);
-    console.log('what is pokemonList', pokemonList);
     const onChange = (event) => {
         setSearchValue(event.target.value);
         setError(false);

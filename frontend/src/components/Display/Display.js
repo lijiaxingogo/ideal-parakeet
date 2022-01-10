@@ -35,7 +35,6 @@ const columns = [
 ];
 const Display = () => {
     const { pokemonList } = useContext(PokemonContext);
-    console.log(pokemonList);
     const classes = useStyle();
     return (
         <div className={classes.container}>
