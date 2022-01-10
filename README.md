@@ -12,7 +12,29 @@
 git clone https://github.com/lijiaxingogo/ideal-parakeet.git
 ```
 
-2. NPM Install: <br/>
+2. Set enviornment variable for frontend and backend
+
+```sh
+cd frontend
+touch .env
+```
+
+Please add<br/>
+REACT_APP_SERVER = 'http://localhost:4000/pokemon'<br/>
+in .env file.<br/>
+
+```sh
+cd server
+touch .env
+```
+
+Please add<br/>
+PORT=4000<br/>
+FRONTEND="http://localhost:3000"<br/>
+SERVER="http://localhost:4000"<br/>
+in .env file.<br/>
+
+3. NPM Install: <br/>
    Start frontend(please make sure port 3000 is available):
 
 ```sh
