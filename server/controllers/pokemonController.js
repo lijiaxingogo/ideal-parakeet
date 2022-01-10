@@ -7,7 +7,8 @@ pokemon.getPokemon = async (req, res, next) => {
         const response = await fetch(base_URI);
         let data = await response.json();
         data = {
-            id: data.id,
+            index: data.id,
+            name: pokemon_name,
             type: data.types.map((a) => a.type.name),
             pic: data.sprites.front_default,
             hp: data.stats[0].base_stat,

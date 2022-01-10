@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(
     cors({
         // Sets Access-Control-Allow-Origin to the UI URI
-        origin: 'http://localhost:3000',
+        origin: process.env.FRONTEND,
         // Sets Access-Control-Allow-Credentials to true
         credentials: true,
     })
