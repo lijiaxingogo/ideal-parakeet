@@ -18,7 +18,8 @@ const Search = () => {
     const onSubmit = async (pokemon = searchValue) => {
         try {
             const data = await axios.get(
-                `http://localhost:4000/pokemon/${pokemon}`,
+                // `http://localhost:4000/pokemon/${pokemon}`,
+                `${process.env.REACT_APP_SERVER}/${pokemon}`,
                 {
                     headers: { 'Access-Control-Allow-Origin': '*' },
                 }
