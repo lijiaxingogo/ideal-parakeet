@@ -1,26 +1,26 @@
 def two_sum(nums, target):
     """
-    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    Finds the indices of the two numbers such that they add up to the target.
     
     Args:
-        nums (List[int]): Array of integers
-        target (int): Target sum
+        nums (list[int]): The list of integers.
+        target (int): The target sum.
     
     Returns:
-        List[int]: Indices of the two numbers that sum up to the target
+        list[int]: The indices of the two numbers.
     """
     # Create a dictionary to store the complement of each number
-    complement_dict = {}
+    complements = {}
     
-    # Iterate through the array
+    # Iterate through the list of numbers
     for i, num in enumerate(nums):
         # Check if the complement of the current number is in the dictionary
         complement = target - num
-        if complement in complement_dict:
-            # If it is, return the indices of the two numbers
-            return [complement_dict[complement], i]
+        if complement in complements:
+            # If so, return the indices of the two numbers
+            return [complements[complement], i]
         # Otherwise, add the current number and its index to the dictionary
-        complement_dict[num] = i
+        complements[num] = i
     
-    # If no two numbers sum up to the target, return an empty list
+    # If no two numbers add up to the target, return an empty list
     return []
